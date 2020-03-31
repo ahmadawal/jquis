@@ -1,0 +1,196 @@
+
+#data-visitor, #checkup-visitor, #resiko-visitor, #ttd-visitor {
+  margin: 0 auto;
+}
+.inner-bg {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+}
+
+.form-box {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+  padding: 22px 13px;
+  margin-top: -50PX;
+  -webkit-box-shadow: 0px 0px 34px 0px rgba(255,255,255,0.34);
+  -moz-box-shadow: 0px 0px 34px 0px rgba(255,255,255,0.34);
+  box-shadow: 0px 0px 34px 0px rgba(255,255,255,0.34);
+}
+
+.list-group-item {
+  width: 75%;
+  background: rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+  padding: 0;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(255,255,255,0.34);
+  -moz-box-shadow: 0px 0px 12px 0px rgba(255,255,255,0.34);
+  box-shadow: 0px 0px 12px 0px rgba(255,255,255,0.34);
+}
+
+h1, h2, h3, h4 {
+  color: #ffffff;
+}
+
+p, .p-bawah{
+  color: rgb(255, 187, 0);
+  font-size: 1.8em;
+  font-weight: 600;
+  text-align: left;
+}
+
+.p-bawah {
+  margin-top: -20px;
+}
+
+b {
+  color: rgb(255, 187, 0);
+}
+
+.quis {
+  font-size: 1.8em;
+}
+
+.form-control-label {
+  color: rgb(255, 187, 0);
+  font-size: 1.8em;
+  font-weight: 600;
+  text-align: left;
+}
+
+.form-control, .input-group-text {
+  background-color: transparent !important;
+  color: #fff;
+  border: 2px solid rgb(255, 187, 0);
+  height: 48px;
+  font-size: 1.7em;
+}
+
+.form-group-text {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.form-control:focus {
+  background-color: rgba(0, 0, 0, 0.13);
+  color: #fff;
+}
+
+li.list-group-item {
+  color: #ffffff;
+  background: transparent;
+  width: 100%;
+  padding: 5px;
+}
+
+.btn {
+  font-size: 1em;
+}
+
+.btn-next {
+  margin: 0 auto;
+  font-size: 2em;
+}
+
+.btn-quis {
+  min-width: 100px;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+.btn-tools {
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.btn-choice {
+  margin: 0 auto;
+  padding-top: 10px;
+  
+  font-size: 1em;
+}
+
+.container {
+  max-width: 100vw;
+  margin: 0 auto;
+}
+.overlay {
+  background:
+    linear-gradient(
+      0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+  background-size: cover;
+  height: 100vh;
+}
+section.section:last-child {
+  margin-bottom: 0;
+}
+/* section.section h2 {
+  margin-bottom: 40px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 30px;
+} */
+/* section.section p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+} */
+/* section.section p:last-child {
+  margin-bottom: 0;
+} */
+section.section.content {
+  padding: 40px 0;
+}
+section.section.parallax {
+  height: 100vh;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* section.section.parallax h1 {
+  color: rgba(255,255,255,0.8);
+  font-size: 32px;
+  margin: 0 auto;
+  line-height: 600px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0,0,0,0.2);
+} */
+section.section.parallax-1 {
+  background-image: url('../images/wallpaper.jpg');
+}
+section.section.parallax-2 {
+  background-image: url('../images/bg2.webp');
+}
+section.section.parallax-3 {
+  background-image: url('../images/bg3.jpg');
+}
+section.section.parallax-4 {
+  background-image: url('../images/bg4.webp');
+}
+@media all and (min-width:600px) {
+  section.section h2 {
+    font-size: 42px;
+  }
+  /* section.section p {
+    font-size: 20px;
+  } */
+  section.section.parallax h1 {
+    font-size: 96px;
+  }
+}
+@media all and (min-width: 960px) {
+  section.section.parallax h1 {
+    font-size: 160px;
+  }
+}
+
+.jconfirm.jconfirm-title-c {
+  font-size: 1.8rem;
+}
+
+.jconfirm.jconfirm-content div {
+  font-size: 1.6rem !important;
+}
