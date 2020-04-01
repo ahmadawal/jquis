@@ -92,7 +92,7 @@
             </button>
           
             @csrf
-            <input type="hidden" name="nama" id="input-nama" value="{{ session('nama') }}">
+            <input type="hidden" name="id" id="input-id" value="{{ session('id') }}">
             <input type="hidden" name="demam" id="input-demam" class="hidden">
             <input type="hidden" name="batuk" id="input-batuk" class="hidden">
             <input type="hidden" name="pilek" id="input-pilek" class="hidden">
@@ -275,20 +275,20 @@ $(function () {
     var pilek = $('#input-pilek').val();
     var nyeri = $('#input-nyeri').val();
     var sesak = $('#input-sesak').val();
-    if (demam == 'ya' || batuk == 'ya' || pilek == 'ya' || nyeri == 'ya' || sesak == 'ya') {
-      larang();
-    } 
+    if (demam === 'ya') {
+      jegat();
+    } else if (batuk === 'ya') {
+      jegat();
+    } else if (pilek === 'ya') {
+      jegat();
+    } else if (nyeri === 'ya') {
+      jegat();
+    } else if (sesak === 'ya') {
+      jegat();
+    }
     else 
     {
       $('#form-medic').submit();
-      // $.ajax({
-      //   type: "post",
-      //   url: "{{ route('visitor.medic') }}",
-      //   data: $('#form-medic').serialize(),
-      //   success: function (response) {
-      //     console.log('medical sukses');
-      //   }
-      // });
     }
   });
 

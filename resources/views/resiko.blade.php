@@ -2,6 +2,7 @@
 @section('content')
 <section class="section parallax parallax-3" id="resiko">
   <div class="container overlay pt-4">
+    <h1 class="text-center">Jembo Tanggap COVID-19</h1>
     <div class="col-lg-8 inner-bg wow fadeInUp" data-wow-delay="0.5s" id="resiko-visitor">
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
@@ -18,7 +19,7 @@
             </div>
           </div>
         </li>
-        <li class="list-group-item" id="rs">
+        <li class="list-group-item" id="rs" style="display: none;">
           <div class="col-sm-12 row">
             <div class="col-sm-7">
               <p>Punya keterangan sehat dari <u>Rumah Sakit</u> ?</p>
@@ -69,7 +70,7 @@
           </button>
   
           @csrf
-          <input type="hidden" name="nama" id="input-nama" value="{{ session('nama') }}">
+          <input type="hidden" name="id" id="input-id" value="{{ session('id') }}">
           <input type="hidden" name="trip" id="input-trip" class="hidden">
           <input type="hidden" name="rs" id="input-rs" class="hidden">
           <input type="hidden" name="kontak" id="input-kontak" class="hidden">
@@ -87,13 +88,15 @@
 @push('script')
 <script>
 $(function () {
-// trip
-$('#btn-trip-yes').on('click', function() {
+  // $('#rs').hide();
+  // trip
+  $('#btn-trip-yes').on('click', function() {
     $("#input-trip").val('ya');
     if ($(this).hasClass('btn-warning'))
     {
       $('#btn-trip-yes').removeClass('btn-warning');
       $('#btn-trip-yes').addClass('btn-dark');
+      $('#rs').toggle('slow');
     }
     if ($('#btn-trip-no').hasClass('btn-dark'))
     {
@@ -108,6 +111,11 @@ $('#btn-trip-yes').on('click', function() {
     {
       $(this).removeClass('btn-warning');
       $(this).addClass('btn-dark');
+      if ($('#rs').is(':visible'))
+      {
+        $('#rs').toggle('slow');
+        $('#input-rs').val('');
+      }
     }
     if ($('#btn-trip-yes').hasClass('btn-dark'))
     {
@@ -118,7 +126,22 @@ $('#btn-trip-yes').on('click', function() {
   // rumah sakit
   
   $('#btn-rs-yes').on('click', function(){
-    $("#input-rs").val('ya');
+    $.alert({
+      theme: 'modern',
+      type: 'blue',
+      icon: 'fa fa-warning',
+      title: '',
+      content: 'Tunjukan surat keterangan ke security !',
+      buttons: {
+        ok: {
+          btnClass: 'btn-blue',
+          action:function () {
+            $("#input-rs").val('ya');
+          }
+        }
+      }
+    });
+    
     if ($(this).hasClass('btn-warning'))
     {
       $(this).removeClass('btn-warning');
@@ -209,40 +232,70 @@ $('#btn-trip-yes').on('click', function() {
     var rs      = $('#input-rs').val();
     var kontak  = $('#input-kontak').val();
     var positif = $('#input-positif').val();
-    if (trip == 'ya' || rs == 'tidak' || kontak == 'ya' || positif == 'ya')
+    if (kontak === 'ya' || positif === 'ya')
     {
       jegat();
+    }
+    else if (trip === 'ya' && rs === 'tidak')
+    {
+      jegat();
+    }
+    else if ( trip === '' || kontak === '' || positif === '') 
+    {
+      $.alert({
+        theme: 'modern',
+        icon: 'fa fa-warning',
+        type: 'green',
+        title: '',
+        content: 'Pertanyaan belum terjawab seluruhnya !',
+        buttons: {
+          ok: {
+            btnClass: 'btn-green',
+          }
+        }
+      });
     }
     else 
     {
       $('#form-risk').submit();
-      // $.ajax({
-      //   type: "post",
-      //   url: "{{ route('visitor.risk') }}",
-      //   data: $('#form-risk').serialize(),
-      //   success: function (response) {
-      //     console.log('risk sukses');
-      //   }
-      // });
     }
   });
 
   function jegat() {
     $.dialog({
+      theme: 'modern',
       icon: 'fa fa-warning',
       type: 'red',
+      modal: true,
+      minHeight: 300,
       title: '',
       content: 'Silahkan ke klinik jembo atau klinik terdekat !.',
+      buttons: {
+        ok: {
+          type: 'red',
+        }
+      }
     });
   }
 
   function larang() {
     $.dialog({
+      columnClass: 'medium',
       icon: 'fa fa-warning',
       type: 'red',
       title: '',
       content: 'Pengunjung tidak diperbolehkan masuk ke kawasan PT. Jembo Cable Company Tbk.',
-    })
+    });
+  }
+
+  function keterangan() {
+    $.dialog({
+      columnClass: 'medium',
+      icon: 'fa fa-warning',
+      type: 'red',
+      title: '',
+      content: 'Pengunjung tidak diperbolehkan masuk ke kawasan PT. Jembo Cable Company Tbk.',
+    });
   }
 });
 </script>

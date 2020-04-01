@@ -26,9 +26,14 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.1.0-9",
+        "datatables.net": "^1.10.20",
+        "datatables.net-dt": "^1.10.20",
         "inputmask": "^5.0.3",
         "jquery-confirm": "^3.3.4",
+        "jquery-ui": "^1.12.1",
         "signature_pad": "^3.0.0-beta.3",
+        "sweetalert": "^2.1.2",
+        "webcamjs": "^1.0.26",
         "wowjs": "^1.1.3"
     }
 }

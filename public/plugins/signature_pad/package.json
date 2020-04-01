@@ -1,28 +1,32 @@
 {
-  "_from": "signature_pad",
+  "_args": [
+    [
+      "signature_pad@3.0.0-beta.3",
+      "C:\\laragon\\www\\jquis"
+    ]
+  ],
+  "_from": "signature_pad@3.0.0-beta.3",
   "_id": "signature_pad@3.0.0-beta.3",
   "_inBundle": false,
   "_integrity": "sha512-qBFUr24eH3twi3rNwLPW7XRSZs8l76r4C/ndh5Yby97x8v0wtYs4HPbbIRwuPwEIcZ01QTPKbizc/OumdisEBQ==",
   "_location": "/signature_pad",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "signature_pad",
+    "raw": "signature_pad@3.0.0-beta.3",
     "name": "signature_pad",
     "escapedName": "signature_pad",
-    "rawSpec": "",
+    "rawSpec": "3.0.0-beta.3",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "3.0.0-beta.3"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/signature_pad/-/signature_pad-3.0.0-beta.3.tgz",
-  "_shasum": "04bfc4403a9431edfbddacd9ab704f04dc7721fb",
-  "_spec": "signature_pad",
-  "_where": "F:\\jquiz",
+  "_spec": "3.0.0-beta.3",
+  "_where": "C:\\laragon\\www\\jquis",
   "author": {
     "name": "Szymon Nowak",
     "email": "szimek@gmail.com",
@@ -31,8 +35,6 @@
   "bugs": {
     "url": "https://github.com/szimek/signature_pad/issues"
   },
-  "bundleDependencies": false,
-  "deprecated": false,
   "description": "Library for drawing smooth signatures.",
   "dev:main": "dist/signature_pad.js",
   "devDependencies": {

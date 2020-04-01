@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
   <meta charset="UTF-8">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -10,9 +10,12 @@
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="{{ asset('plugins/wowjs/css/libs/animate.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/jquery-confirm/dist/jquery-confirm.min.css') }}">
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css"> --}}
   {{-- <link rel="stylesheet" href="/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"> --}}
   <link rel="stylesheet" href="{{ asset('css/quis.css') }}">
   @stack('style')
@@ -30,6 +33,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
   </div>
 </nav> --}}
+
 @yield('content')
   
 <script src="{{ asset('js/app.js') }}"></script>
@@ -37,6 +41,8 @@
 <script src="{{ asset('plugins/jquery-confirm/dist/jquery-confirm.min.js') }}"></script>
 <script src="{{ asset('plugins/inputmask/dist/jquery.inputmask.min.js') }}"></script>
 {{-- <script src="/plugins/bootstrap-datepicker/dist/locales/bootstrap-datepicker.id.min.js"></script> --}}
+
+@include('sweet::alert')
 <script src="{{ asset('js/quis.js') }}"></script>
 <script>
 $(function () {

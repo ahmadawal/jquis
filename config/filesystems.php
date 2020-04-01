@@ -64,6 +64,10 @@ return [
             'url' => env('AWS_URL'),
         ],
 
+        'visitor' => [
+            'driver'    => 'local',
+            'root'      => public_path().'/visitor_img',
+        ],
     ],
 
     /*
